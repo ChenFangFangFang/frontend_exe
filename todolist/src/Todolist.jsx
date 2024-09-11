@@ -21,6 +21,9 @@ function TodoList() {
         }    
     }
 
+    const deleteTodo =(index)=>{
+      setTodos(todos.filter((todo, i) => i !== index))
+    }
     return(
       <>
       <h3>My Todo List</h3>
@@ -36,25 +39,26 @@ function TodoList() {
         //onChange={event => setDesc(event.target.value)}
         /></p>
       <button onClick={addTodo}>Add</button>
-      {/* <TodoTable todos={todos}/> */}
       <table>
-        <tbody>
-          <tr>
-          <td className="title">Description</td>
-          <td className="title">Due Date</td>
-          </tr>
-          
-          {
-            todos.map((todo,index)=> 
-              <tr key={index}>
-                <td>{todo.description}</td>
-                <td>{todo.duedate}</td>
-              </tr>
+          <tbody>
+            <tr>
+              <td className="title">Date</td>
+              <td className="title">Description</td>
+            </tr>
+              {todos.map((item,index) => (
+                <tr key={index}>
+                <td>{item.duedate}</td>
+                <td>{item.description}</td>
+                <td>
+                  <button onClick={() => deleteTodo(index)}>Delete</button>
+                </td>
+                </tr>
+              ))}
               
-            )
-          }
-        </tbody>
-      </table>
+          
+          </tbody>
+        </table>
+    
       </>
     );
   }
