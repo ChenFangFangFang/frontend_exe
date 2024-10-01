@@ -1,0 +1,28 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  height: 100%; /* 确保整个页面的高度为 100% */
+  margin: 0;
+  padding: 2rem;
+  text-align: left;
+
+}
+
+
+body {
+  margin: 0;
+  height: 100%; /* 确保整个页面的高度为 100% */
+
+  padding: 2rem;
+  padding: 0;
+  text-align: left;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
